@@ -23,7 +23,7 @@ export async function getStaticPaths() {
                 slug: item.fields.slug
             },
         })),
-        fallback: false
+        fallback: true
     }
 }
 
@@ -35,11 +35,13 @@ export async function getStaticProps({params}) {
     return  {
         props: {
             post: data.items[0]
-        }
+        },
+        revalidate: 3
     }
 }
 
 export default function Post ({post}) {
+    if (!post) return <div>404</div>
     return (
         <MainLayout>
             <div className="hero">
