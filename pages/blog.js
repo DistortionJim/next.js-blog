@@ -26,7 +26,11 @@ export async function getStaticProps() {
 export default function Blog({posts}) {
     console.log(posts);
     return (
-        <MainLayout>
+        <MainLayout title="Blog">
+            <ul className="breadcrumbs">
+                <li><Link href="/">Main</Link></li>
+                <li>Blog</li>
+            </ul>
             <h1>Blog</h1>
             <ul className="blog-list">
                 {

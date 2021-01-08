@@ -32,7 +32,7 @@ export default function MainLayout({children, title=' | Next.js Blog'}) {
                                 <Link href="/"><a className={router.pathname == "/" ? "active nav-link" : "nav-link"}>Main</a></Link>
                             </li>
                             <li className="menu__item">
-                                <Link href="/blog"><a className={router.pathname == "/blog" ? "active nav-link" : "nav-link"}>Blog</a></Link>
+                                <Link href="/blog"><a className={router.pathname == "/blog" || router.pathname == "/post/[slug]" ? "active nav-link" : "nav-link"}>Blog</a></Link>
                             </li>
                             <li className="menu__item">
                                 <Link href="/contacts"><a className={router.pathname == "/contacts" ? "active nav-link" : "nav-link"}>Contacts</a></Link>
